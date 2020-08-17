@@ -1,0 +1,23 @@
+function solve(input) {
+    let number = Number(input.shift());
+    let printLine = '';
+
+    for (let currentNumber = 1111; currentNumber <= 9999; currentNumber++) {
+        currentNumber = String(currentNumber);
+        let toBePrinted = true;
+
+        for (let i = 0; i < currentNumber.length; i++) {
+            let index = Number(currentNumber[i]);
+
+            if (number % index !== 0) {
+                toBePrinted = false;
+            }
+        }
+
+        if (toBePrinted) {
+            printLine += currentNumber + ' ';
+        }
+    }
+
+    console.log(printLine);
+}
